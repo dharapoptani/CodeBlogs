@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg bg-dark p-0">
+    <div class="container-fluid">
+        <span class="navbar-brand">
+            <img src="http://localhost:<%= process.env.PORT %>/images/logo.jpg" alt="Bootstrap" width="80" height="74">
+        </span>
+        <span class="navbar-brand fs-2" style="color: #33c9f2;">CodeBlogs</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-success" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
+                <li class="nav-item text-info">
+                    <a class="nav-link btn" style="color: #ddd;" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn" style="color: #ddd;" href="/articles/new">New Article</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn" style="color: #ddd;" href="/about">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn" style="color: #ddd;" href="/contact">Contact us</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>

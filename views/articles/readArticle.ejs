@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>CodeBlogs</title>
+</head>
+
+<body style="min-height:100vh;position:relative; width:100vw; ">
+    <div class="container mb-4">
+        <div class="d-flex justify-content-between align-items-center mt-4  border-bottom border-5 ">
+            <h1 class="text-success">Read Article</h1>
+            <div>
+                <a href="/articles/edit/<%= article.id%>"  class="btn btn-secondary">Edit</a>
+                <form action="/articles/<%=article.id%>?_method=delete" method="post" class="d-inline">
+                    <button class="btn btn-danger mb-1 " role="button">Delete</button>
+                </form>
+                <a href="/" class="btn btn-info">Cancel</a>
+            </div>
+        </div>
+        <div>
+            <p class="fs-4 fw-bold mt-4">
+                <%= article.title %>
+            </p>
+            <p class="fs-4 fw-bold">Contributed By : <span class="text-muted fs-4">
+                <%= article.contributor %> on <%= article.createdAt.toLocaleDateString() %>
+            </span>
+            </p>
+            
+            <p class="fs-4 fw-bold">
+                Description :
+            </p>
+            <p class="fs-4 card px-4 py-2">
+                <%- article.description.replaceAll('\r\n',"<br />") %>
+            </p>
+            <p class="fs-4 fw-bold">
+                Code :
+            </p>
+            <p class="fs-4 card px-4 py-2" >
+                <%- article.code.replaceAll('\r\n',"<br/>") %>
+            </p>
+
+        </div>
+
+    </div>
+
+        <footer class="text-center text-lg-start bg-light text-muted w-100" style="position: relative; bottom:0">
+          
+            <p class="text-center p-4">Special Thanks to <span class="fw-bold"><%= article.contributor %></span>
+                for this amazing article. Please reach out to us at <span class="fw-bold">codeblogs@gmail.com</span> if you find anything wrong in this article.</p>
+           
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2022 Copyright:
+                <a class="text-reset fw-bold" href="http://localhost:5000">CodeBlogs.com</a>
+            </div>
+        </footer>
+</body>
+
+</html>
